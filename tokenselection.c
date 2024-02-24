@@ -26,5 +26,15 @@ void main()
         {
             printf("2");
         }
+
+        else if(s[i] == '*')
+        {
+            printf("3");
+        }
+
+        else if(s[i] == '}' || s[i] == ')')
+        {
+            printf("4");
+        }
     }
 }
