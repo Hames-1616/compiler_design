@@ -1,2 +1,1 @@
-
-            printf("5");
+printf("Substring Not Found");
