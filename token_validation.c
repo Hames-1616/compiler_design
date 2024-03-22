@@ -2,9 +2,9 @@
 #include <ctype.h>
 
 int main() {
-    char grammar[10];
-    char tok[10];
-    char tokens[10];
+    char grammar[100]; // Increased size to accommodate larger inputs
+    char tok[100]; // Increased size to accommodate larger tokens
+    char tokens[100]; // Increased size to accommodate larger tokens
 
     printf("Enter the grammar of your language: ");
     scanf("%s", grammar);
@@ -21,6 +21,10 @@ int main() {
             tok[i] = '3';
         } else if (isdigit(grammar[i])) {
             tok[i] = '6';
+            // Handle multi-digit numbers
+            while (isdigit(grammar[i + 1])) {
+                i++;
+            }
         }
         i++;
     }
@@ -31,7 +35,7 @@ int main() {
 
     int size = i;
     i = 0;
-    while (i < size) {
+    while (i < size+1) {
         if ((tok[i] == '6' && tok[i + 1] == '2' && tok[i + 2] == '6') || (tok[i] == '6' && tok[i + 1] == '3' && tok[i + 2] == '6') ||
             (tok[i] == '4' && tok[i + 1] == '6' && tok[i + 2] == '5')) {
             tokens[i] = '6';
